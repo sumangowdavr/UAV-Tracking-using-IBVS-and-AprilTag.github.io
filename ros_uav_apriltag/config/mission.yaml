@@ -1,0 +1,29 @@
+mission_manager:
+  ros__parameters:
+    setpoint_rate_hz: 20.0
+    takeoff_altitude_m: 3.0
+    hover_altitude_m: 2.5
+    arm_timeout_s: 12.0
+    center_hold_time_s: 2.0
+
+search_planner:
+  ros__parameters:
+    bounds: [0.0, 6.0, 0.0, 6.0]
+    lane_spacing_m: 2.0
+    search_altitude_m: 3.0
+    arrival_radius_m: 0.4
+
+apriltag_bridge:
+  ros__parameters:
+    target_tag_id: 0
+    detections_topic: /tag_detections
+    target_pose_topic: /mission/target_pose
+    target_found_topic: /mission/target_found
+    map_frame: map
+
+tracking_controller:
+  ros__parameters:
+    kp_xy: 0.7
+    max_xy_vel_mps: 0.8
+    center_tolerance_m: 0.2
+    descent_rate_mps: 0.0
