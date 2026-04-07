@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>ros_uav_apriltag</name>
+  <version>0.2.0</version>
+  <description>ROS2 GPS-denied UAV exploration and AprilTag localization mission package for X500V2 + MAVROS.</description>
+
+  <maintainer email="you@example.com">Codex Agent</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_python</buildtool_depend>
+
+  <depend>rclpy</depend>
+  <depend>geometry_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>mavros_msgs</depend>
+  <depend>tf2_ros</depend>
+  <depend>apriltag_msgs</depend>
+  <depend>launch</depend>
+  <depend>launch_ros</depend>
+  <depend>topic_tools</depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>
