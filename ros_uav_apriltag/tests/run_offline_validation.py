@@ -46,6 +46,10 @@ def run():
 
     final_err = ((tag_x - drone_x) ** 2 + (tag_y - drone_y) ** 2) ** 0.5
 
+    assert phase == 'HOVER', f'mission ended in {phase}'
+    assert detect_step is not None and centered_step is not None
+    assert final_err < center_tol, f'tracking error {final_err} exceeds tolerance'
+
     print('offline_validation: PASS')
     print(f'waypoint_count={len(waypoints)}')
     print(f'detect_step={detect_step}')

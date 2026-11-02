@@ -41,3 +41,12 @@ All passed in this container.
 ## Runtime limitation
 
 `ros2` CLI/runtime is not installed in this container, so full ROS2+PX4 SITL launch and flight trace could not be executed here.
+
+
+## Rechecked November 2, 2026 (UTC)
+
+- `python3 -m pytest -v ros_uav_apriltag/tests/test_control_utils.py`: **3 collected tests passed**. The existing utility assertions are now named pytest cases and remain runnable through the original script entry point.
+- `PYTHONPATH=ros_uav_apriltag python3 ros_uav_apriltag/tests/run_offline_validation.py`: **PASS**, 8 search waypoints, detection step 40, centered step 93, final XY error 0.184 m. The runner now asserts that HOVER is reached and the final error is below tolerance before reporting success.
+- All package Python files parsed successfully and `package.xml` parsed successfully.
+
+These checks ran without a camera, VIO estimator, flight controller or PX4 simulator. The earlier runtime limitation remains unchanged.
